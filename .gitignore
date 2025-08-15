@@ -1,4 +1,8 @@
+__pycache__/
+*.py[cod]
+db.sqlite3
+
 venv
 notes.md
-tasks_learn 
-tasks_implementation
+tasks_learn.md
+tasks_implementation.md
