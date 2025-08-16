@@ -48,15 +48,15 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 50)
     username = models.CharField(max_length = 50, unique = True)
-    email = models.CharField(max_length = 12, blank = True)
+    email = models.CharField(max_length = 12, blank = True, unique = True)
     phone_number = models.CharField(max_length = 15, blank = True)
-    role = models.PositiveSmallIntegerField(choice=USER_ROLES, blank=True, null=True)
+    role = models.PositiveSmallIntegerField(choices=USER_ROLES, blank=True, null=True)
 
     # Required Fields
     date_joined = models.DateTimeField(auto_now_add = True)
     last_login = models.DateTimeField(auto_now_add = True)
     created_date = models.DateTimeField(auto_now_add = True)
-    modified_date = models.DateTimeField(auto_new = True)
+    modified_date = models.DateTimeField(auto_now_add = True)
     is_admin = models.BooleanField(default = False)
     is_staff = models.BooleanField(default = False)
     is_active = models.BooleanField(default = False)
