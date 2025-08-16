@@ -6,3 +6,5 @@ venv
 notes.md
 tasks_learn.md
 tasks_implementation.md
+static
+.env
