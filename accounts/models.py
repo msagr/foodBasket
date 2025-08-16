@@ -48,7 +48,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length = 50)
     last_name = models.CharField(max_length = 50)
     username = models.CharField(max_length = 50, unique = True)
-    email = models.CharField(max_length = 12, blank = True, unique = True)
+    email = models.CharField(max_length = 100, unique = True)
     phone_number = models.CharField(max_length = 15, blank = True)
     role = models.PositiveSmallIntegerField(choices=USER_ROLES, blank=True, null=True)
 
@@ -73,5 +73,8 @@ class User(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         return self.is_admin
     
-    def has_module_perm(self, app_label):
+    def has_module_perms(self, app_label):
         return True
+    
+    # class Meta:
+    #     db_table = "auth_user"
