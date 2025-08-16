@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User
+from .models import User, UserProfile
 
 # class UserAdmin(BaseUserAdmin):
 # 	list_display = ('email', 'username', 'first_name', 'last_name', 'role', 'is_admin')
@@ -35,3 +35,4 @@ class CustomUserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, CustomUserAdmin)
+admin.site.register(UserProfile)
