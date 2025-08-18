@@ -26,6 +26,9 @@ def registerUser(request):
             user.save()
 
             return redirect('registeruser')
+        else:
+            print('Invalid form')
+            #return redirect('registeruser')
     else:
         form = UserForm()
     context = {
